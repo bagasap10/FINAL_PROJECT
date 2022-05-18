@@ -1,0 +1,5 @@
+2022/05/18-15:06:02.709 5c38 Log #3: 2 ops saved to Table #4 OK
+2022/05/18-15:06:02.710 5c38 Archiving D:\Embedded Programming\FINAL_PROJECT\.jxbrowser.userdata\Default\Site Characteristics Database/000003.log: OK
+2022/05/18-15:06:02.710 5c38 Table #4: 2 entries OK
+2022/05/18-15:06:02.711 5c38 Archiving D:\Embedded Programming\FINAL_PROJECT\.jxbrowser.userdata\Default\Site Characteristics Database/MANIFEST-000001: OK
+2022/05/18-15:06:02.715 5c38 **** Repaired leveldb D:\Embedded Programming\FINAL_PROJECT\.jxbrowser.userdata\Default\Site Characteristics Database; recovered 1 files; 191 bytes. Some data may have been lost. ****
