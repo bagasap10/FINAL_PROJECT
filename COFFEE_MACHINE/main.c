@@ -79,11 +79,6 @@ int main(void){
     configMINIMAL_STACK_SIZE + 100,
                 NULL, PRIORITY_MEDIUM, NULL);
 
-//    xTaskCreate(test_task, "Test task",
-//    configMINIMAL_STACK_SIZE + 100,
-//                NULL, PRIORITY_LOW, NULL);
-
-// Start scheduler
     vTaskStartScheduler();
 
     return 1;
