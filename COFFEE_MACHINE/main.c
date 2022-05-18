@@ -4,7 +4,7 @@
  * main.c
  */
 
-//#include <digiswitch.h>
+#include <digiswitch.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -36,7 +36,6 @@ int main(void){
     uart0_init(19200, 8, 1, 0);
     init_systick();
     key_init();
-//    digiswitch_init();
     lcd_init();
     switch_init();
     led_init();
@@ -44,6 +43,7 @@ int main(void){
     payment_init();
     coffee_init();
     log_init();
+    digiswitch_init();
 
     // Create tasks
 
@@ -63,10 +63,6 @@ int main(void){
     configMINIMAL_STACK_SIZE,
                 NULL, PRIORITY_IDLE, NULL);
 
-//    xTaskCreate(digiswitch_task, "Digitalswitch task",
-//    configMINIMAL_STACK_SIZE,
-//                NULL, PRIORITY_HIGH, NULL);
-
     xTaskCreate(lcd_task, "LCD task",
     configMINIMAL_STACK_SIZE + 100,
                 NULL, PRIORITY_MEDIUM, NULL);
@@ -78,6 +74,10 @@ int main(void){
     xTaskCreate(ui_task, "UI task",
     configMINIMAL_STACK_SIZE + 100,
                 NULL, PRIORITY_MEDIUM, NULL);
+
+        xTaskCreate(digiswitch_task, "Digiswitch task",
+        configMINIMAL_STACK_SIZE,
+                    NULL, PRIORITY_HIGH, NULL);
 
     vTaskStartScheduler();
 

@@ -69,7 +69,7 @@ MENU main_menu()
         case '2':
             return SALES_REPORT;
         default:
-            uprintf(buffer, "%c\n\rIncorrect input\n\r", inp);
+            uprintf(buffer, "%c\n\rIncorrect input\n\r", input);
             break;
         }
     }
