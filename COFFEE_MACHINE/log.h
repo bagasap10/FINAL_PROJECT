@@ -33,7 +33,7 @@ struct LOG_TYPE_S
     INT8U coffee_number;
     INT8U price;
 //    INT8U time;
-    char payment_type[CARD_LENGTH + 1]; // Allows for escape char
+    char payment_type[CARD_LENGTH + 1]; // allows for escape char
 };
 
 typedef struct LOG_TYPE_S LOG_TYPE;

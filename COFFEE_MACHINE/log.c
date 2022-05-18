@@ -6,8 +6,7 @@
  */
 
 #include "log.h"
-/***************** Defines ********************/
-/***************** Constants ******************/
+
 /***************** Variables ******************/
 QueueHandle_t log_coffee_q;
 QueueHandle_t log_payment_q;
@@ -18,6 +17,7 @@ SemaphoreHandle_t log_array_semaphore;
 
 extern COFFEE_TYPE coffee_types[COFFEE_TYPES_LENGTH];
 extern SemaphoreHandle_t coffee_types_mutex;
+
 /***************** Functions ******************/
 void log_init()
 {
@@ -53,7 +53,7 @@ void log_task(void* pvParameters)
         log->active = 1;
         log->price = coffee_type.price;
 
-        // Convert payment to string
+        // convert payment to string
         if (payment_type[0] == CASH_ID)
         {
             strcpy(&log->payment_type, "CASH    ");
@@ -87,20 +87,9 @@ void log_task(void* pvParameters)
     }
 }
 
-void log_coffee(COFFEE_TYPE* coffee)
-{
-    xQueueSendToBack(log_coffee_q, coffee, portMAX_DELAY);
-}
-
-void log_payment(INT8U* payment_type)
-{
-    xQueueSendToBack(log_payment_q, payment_type, portMAX_DELAY);
-}
-
-void log_time(INT8U* time)
-{
-    xQueueSendToBack(log_time_q, time, portMAX_DELAY);
-}
+void log_coffee(COFFEE_TYPE* coffee){xQueueSendToBack(log_coffee_q, coffee, portMAX_DELAY);}
+void log_payment(INT8U* payment_type){xQueueSendToBack(log_payment_q, payment_type, portMAX_DELAY);}
+void log_time(INT8U* time){xQueueSendToBack(log_time_q, time, portMAX_DELAY);}
 
 LOG_TYPE* log_nextlog()
 {
