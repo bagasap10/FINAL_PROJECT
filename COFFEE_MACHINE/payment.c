@@ -61,9 +61,6 @@ void payment_task(void* pvParameters)
         case PAYMENT:
             current_state = paymenttype_state();
             break;
-//        case CARD:
-//            current_state = CARD_NUMBER;
-            break;
         case CARD_NUMBER:
             current_state = cardnumber_check_state();
             break;
@@ -160,7 +157,7 @@ PAYMENT_STATES pin_check_state()
         {
             if (pin_counter == 0)
             {
-                lprintf(0, "Enter PIN");
+                lprintf(0, "Enter PIN (%d)", CARD_MAX_ATTEMPTS - attempts);
                 lprintf(1, ""); // Reset bottom ready for writing digits
             }
             INT8U inp = key_get(portMAX_DELAY);
@@ -208,7 +205,7 @@ PAYMENT_STATES pin_check_state()
                 }
                 else
                 {
-                    return CARD_NUMBER;
+                    return PAYMENT;
                 }
             }
         }
