@@ -11,6 +11,7 @@
 /***************** Variables ******************/
 QueueHandle_t log_coffee_q;
 QueueHandle_t log_payment_q;
+QueueHandle_t log_time_q;
 
 LOG_TYPE log_array[LOG_LENGTH];
 SemaphoreHandle_t log_array_semaphore;
@@ -36,12 +37,14 @@ void log_task(void* pvParameters)
 {
     COFFEE_TYPE coffee_type;
     INT8U payment_type[CARD_LENGTH];
+//    INT8U time[6];
     INT8U i;
     //int i;
     while (1)
     {
         xQueueReceive(log_coffee_q, &coffee_type, portMAX_DELAY);
         xQueueReceive(log_payment_q, &payment_type, portMAX_DELAY);
+//        xQueueReceive(log_time_q, &time, portMAX_DELAY);
 
         xSemaphoreTake(log_array_semaphore, portMAX_DELAY);
 
@@ -65,20 +68,20 @@ void log_task(void* pvParameters)
 
         // Get coffee number
         xSemaphoreTake(coffee_types_mutex, portMAX_DELAY);
-        INT8U num = -1;
+        INT8U number = -1;
         for (i = 0; i < COFFEE_TYPES_LENGTH; i++)
         {
             if (!strcmp(coffee_types[i].name, coffee_type.name))
             { // Names are equal
-                num = i;
+                number = i;
                 break;
             }
         }
         xSemaphoreGive(coffee_types_mutex);
 
-        configASSERT(num != -1);
+        configASSERT(number != -1);
 
-        log->coffee_number = num;
+        log->coffee_number = number;
 
         xSemaphoreGive(log_array_semaphore);
     }
@@ -92,6 +95,11 @@ void log_coffee(COFFEE_TYPE* coffee)
 void log_payment(INT8U* payment_type)
 {
     xQueueSendToBack(log_payment_q, payment_type, portMAX_DELAY);
+}
+
+void log_time(INT8U* time)
+{
+    xQueueSendToBack(log_time_q, time, portMAX_DELAY);
 }
 
 LOG_TYPE* log_nextlog()

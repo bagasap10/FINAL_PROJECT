@@ -46,6 +46,7 @@ int main(void){
     log_init();
 
     // Create tasks
+
     xTaskCreate(coffee_task, "Coffee task",
     configMINIMAL_STACK_SIZE + 100,
                 NULL, PRIORITY_LOW, &coffee_t);

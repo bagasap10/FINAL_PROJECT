@@ -32,6 +32,7 @@ struct LOG_TYPE_S
     BOOLEAN active;
     INT8U coffee_number;
     INT8U price;
+//    INT8U time;
     char payment_type[CARD_LENGTH + 1]; // Allows for escape char
 };
 
@@ -42,6 +43,7 @@ void log_init();
 void log_task(void* pvParameters);
 void log_coffee(COFFEE_TYPE* coffee);
 void log_payment(INT8U* payment);
+void log_time(INT8U* time);
 LOG_TYPE* log_nextlog();
 
 #endif /* LOG_H_ */

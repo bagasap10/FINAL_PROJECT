@@ -15,7 +15,7 @@ extern QueueHandle_t ds_input_queue;
 INT8U balance;
 SemaphoreHandle_t balance_mutex;
 
-QueueSetHandle_t cash_set;
+QueueSetHandle_t cash_set_q;
 
 extern TaskHandle_t coffee_t;
 
@@ -33,7 +33,7 @@ void payment_init()
     xSemaphoreGive(balance_mutex);
 
     // Set cotaining digiswtich input queue and coffee select semaphore
-    cash_set = xQueueCreateSet(DS_INPUT_QUEUE_LENGTH + 1);
+    cash_set_q = xQueueCreateSet(DS_INPUT_QUEUE_LENGTH + 1);
 }
 
 /*****************************************************************************
@@ -45,8 +45,8 @@ void payment_task(void* pvParameters)
 {
     PAYMENT_STATES current_state = START;
 
-    configASSERT(xQueueAddToSet(ds_input_queue, cash_set) == pdPASS);
-    configASSERT(xQueueAddToSet(active_semaphore, cash_set) == pdPASS);
+    configASSERT(xQueueAddToSet(ds_input_queue, cash_set_q) == pdPASS);
+    configASSERT(xQueueAddToSet(active_semaphore, cash_set_q) == pdPASS);
     xSemaphoreGive(active_semaphore);
 
     while (1)
@@ -56,6 +56,7 @@ void payment_task(void* pvParameters)
         {
         case START:
             ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+//            xSemaphoreGive(active_semaphore);
             current_state = PAYMENT;
             break;
         case PAYMENT:
@@ -117,7 +118,7 @@ PAYMENT_STATES paymenttype_state()
  ******************************************************************************/
 PAYMENT_STATES cardnumber_check_state()
 {
-    lprintf(0, "Enter cardnumber");
+    lprintf(0, "Enter cardNumber");
     lprintf(1, ""); // Reset bottom ready for writing digits
 
     INT8U digit_counter = 0;
@@ -150,15 +151,15 @@ PAYMENT_STATES pin_check_state()
 {
     INT8U pin[PIN_LENGTH];
     INT8U pin_counter = 0;
-    INT8U attempts = 0;
+    INT8U attempts = 1;
     while (1)
     {
         if (pin_counter < PIN_LENGTH)
         {
             if (pin_counter == 0)
             {
-                lprintf(0, "Enter PIN (%d)", CARD_MAX_ATTEMPTS - attempts);
-                lprintf(1, ""); // Reset bottom ready for writing digits
+                lprintf(0, "Enter PIN : (%d)", CARD_MAX_ATTEMPTS - attempts + 1);
+                lprintf(1, "");
             }
             INT8U inp = key_get(portMAX_DELAY);
             if (key2int(inp) != -1)
@@ -171,23 +172,25 @@ PAYMENT_STATES pin_check_state()
         else
         {
             if ((pin[PIN_LENGTH - 1] % 2 == 0
-                    && cardnumber[CARD_LENGTH - 1] % 2 != 0)
+                    && cardnumber[CARD_LENGTH - 1] % 2 == 0)
                     || (pin[PIN_LENGTH - 1] % 2 != 0
-                            && cardnumber[CARD_LENGTH - 1] % 2 == 0))
+                            && cardnumber[CARD_LENGTH - 1] % 2 != 0))
             {
-                balance = CARD_PREPAID;
-                lprintf(1, "");
-                xTaskNotifyGive(coffee_t); // Start brewing
+                balance = DEFAULT_CARD;
+                xTaskNotifyGive(coffee_t); // Back to coffee.c, start brewing
 
-                while (1)
+                while(1)
                 {
-                    xQueueSelectFromSet(cash_set, portMAX_DELAY); // Wait for brew
-
+//                    lprintf(1, "i = %d", i);
+                    xQueueSelectFromSet(cash_set_q, portMAX_DELAY); // Wait for brew, it won't continue until
+//                    lprintf(1, "aaaaa");
                     if (xSemaphoreTake(active_semaphore, 0) == pdPASS)
                     {
                         xSemaphoreGive(active_semaphore);
+//                        lprintf(1, "bbbb");
                         break;
                     }
+//                    lprintf(1, "ccccccc");
                 }
 
                 xTaskNotifyGive(coffee_t); // Restart
@@ -205,7 +208,13 @@ PAYMENT_STATES pin_check_state()
                 }
                 else
                 {
-                    return PAYMENT;
+                    lprintf(1, ""); // Reset bottom ready for writing digits
+                    lprintf(0, "Rejected");
+                    INT8U inp = key_get(portMAX_DELAY);
+                    if (key2int(inp) != -1)
+                    {
+                        return PAYMENT;
+                    }
                 }
             }
         }
@@ -248,24 +257,26 @@ PAYMENT_STATES cash_state()
         INT8S dir = 0;
         do
         {
-            dir = digiswitch_get(0);
+            dir = digiswitch_get(5);
+
+//            lprintf(1, "dir : %d", dir);
             switch (dir)
             {
             case 1:
-                balance += CASH_CLOCKWISE;
+                balance += CLOCKWISE;
                 break;
             case -1:
-                balance += CASH_COUNTERCLOCKWISE;
+                balance += COUNTERCLOCKWISE;
                 break;
             }
         }
         while (dir != 0);
 
-        lprintf(1, "Balance: %ikr", balance);
+        lprintf(1, "Balance : %d", balance);
 
         xSemaphoreGive(balance_mutex);
 
-        xQueueSelectFromSet(cash_set, portMAX_DELAY);
+        xQueueSelectFromSet(cash_set_q, portMAX_DELAY);
 
         if (xSemaphoreTake(active_semaphore, 0) == pdPASS)
         {
@@ -286,15 +297,15 @@ PAYMENT_STATES change_state()
 {
     int i;
     xSemaphoreTake(balance_mutex, portMAX_DELAY);
-    lprintf(0, "Change: %d", balance);
+    lprintf(0, "Change : %d", balance);
     lprintf(1, "");
 
     for (i = 0; i < balance; i++)
     {
         led_yellow();
-        vTaskDelay(pdMS_TO_TICKS(CHANGE_FLASH_TIME_MS));
+        vTaskDelay(pdMS_TO_TICKS(SWITCH_POLL_DELAY_MS));
         led_off();
-        vTaskDelay(pdMS_TO_TICKS(CHANGE_FLASH_TIME_MS));
+        vTaskDelay(pdMS_TO_TICKS(SWITCH_POLL_DELAY_MS));
     }
     xSemaphoreGive(balance_mutex);
 

@@ -26,6 +26,7 @@ extern TaskHandle_t payment_t;
 
 extern INT8U balance;
 extern SemaphoreHandle_t balance_mutex;
+//SemaphoreHandle_t turn;
 /*****************************   Functions   *******************************/
 /*****************************************************************************
  *   Input    : N/A
@@ -35,27 +36,28 @@ extern SemaphoreHandle_t balance_mutex;
 void coffee_init()
 {
     active_semaphore = xSemaphoreCreateBinary();
+//    turn =xSemaphoreCreateMutex();
     configASSERT(active_semaphore);
 
     coffee_types_mutex = xSemaphoreCreateMutex();
     xSemaphoreGive(coffee_types_mutex);
 
-    COFFEE_TYPE cappuccino;
-    cappuccino.active = 1;
-    strcpy(cappuccino.name, "Cappuccino");
-    cappuccino.price = 24;
-    cappuccino.amount_pay = 0;
-    cappuccino.grind_time = 5.0f;
-    cappuccino.brew_time = 15.0f;
-    cappuccino.milk_time = 3.0f;
-    coffee_types[1] = cappuccino;
+    COFFEE_TYPE latte;
+    latte.active = 1;
+    strcpy(latte.name, "latte");
+    latte.price = 26;
+    latte.amount_pay = 0;
+    latte.grind_time = 5.0f;
+    latte.brew_time = 15.0f;
+    latte.milk_time = 5.0f;
+    coffee_types[1] = latte;
 
     COFFEE_TYPE espresso;
     espresso.active = 1;
     strcpy(espresso.name, "Espresso");
-    espresso.price = 15;
+    espresso.price = 18;
     espresso.amount_pay = 0;
-    espresso.grind_time = 5.0f;
+    espresso.grind_time = 8.0f;
     espresso.brew_time = 15.0f;
     espresso.milk_time = 0.0f;
     coffee_types[0] = espresso;
@@ -107,7 +109,7 @@ COFFEE_STATES brew_state()
         }
         else if (!get_sw2())
         {
-            lprintf(0, "Place cup");
+            lprintf(0, "Place the cup");
             if (price != 0.0f && current_coffee.amount_pay)
             {
                 inactivity += SWITCH_POLL_DELAY_MS;
@@ -115,7 +117,7 @@ COFFEE_STATES brew_state()
         }
         else if (!get_sw1())
         {
-            lprintf(0, "Hold start");
+            lprintf(0, "Hold to start");
             if (price != 0.0f && current_coffee.amount_pay)
             {
                 inactivity += SWITCH_POLL_DELAY_MS;
@@ -147,19 +149,19 @@ COFFEE_STATES brew_state()
                 if (current_coffee.grind_time > 0.0f)
                 {
                     led_red();
-                    lprintf(0, "Grinding...");
+                    lprintf(0, "Grinding");
                     current_coffee.grind_time -= SWITCH_POLL_DELAY_MS / 1000.0f;
                 }
                 else if (current_coffee.brew_time > 0.0f)
                 {
                     led_yellow();
-                    lprintf(0, "Brewing...");
+                    lprintf(0, "Brewing");
                     current_coffee.brew_time -= SWITCH_POLL_DELAY_MS / 1000.0f;
                 }
                 else if (current_coffee.milk_time > 0.0f)
                 {
                     led_green();
-                    lprintf(0, "Milk froth...");
+                    lprintf(0, "Milk frothing");
                     current_coffee.milk_time -= SWITCH_POLL_DELAY_MS / 1000.0f;
                 }
                 else
@@ -168,9 +170,6 @@ COFFEE_STATES brew_state()
                 }
             }
         }
-        // Poll switches, this causes the screen to blink
-        // to make sure the text is read
-        // Definitely a feature and not laziness
         vTaskDelay(pdMS_TO_TICKS(SWITCH_POLL_DELAY_MS));
     }
 
@@ -188,7 +187,9 @@ COFFEE_STATES brew_state()
 
     xSemaphoreGive(active_semaphore);
 
-    ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Wait for change
+    ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Wait for change7
+
+//    xSemaphoreGive(turn);
 
     return C_LOG;
 }
@@ -209,14 +210,8 @@ COFFEE_STATES select_coffee_state()
         xSemaphoreTake(coffee_types_mutex, portMAX_DELAY);
         do
         {
-            if (num < COFFEE_TYPES_LENGTH - 1)
-            {
-                num++;
-            }
-            else
-            {
-                num = 0;
-            }
+            if (num < COFFEE_TYPES_LENGTH - 1) num++;
+            else num = 0;
         }
         while (!coffee_types[num].active);
 
@@ -229,12 +224,20 @@ COFFEE_STATES select_coffee_state()
             {
                 current_coffee = coffee_types[inp];
 
-                xTaskNotifyGive(payment_t);
+                lprintf(0, "price : %d", current_coffee.price);
+                lprintf(1, "name  : %s", current_coffee.name);
 
-                xSemaphoreTake(active_semaphore, portMAX_DELAY);
+                INT8U inp = key_get(portMAX_DELAY);
+                if (key2int(inp) != -1)
+                {
+                    // move to payment
+                    xTaskNotifyGive(payment_t);
 
-                xSemaphoreGive(coffee_types_mutex);
-                return BREW;
+                    xSemaphoreTake(active_semaphore, portMAX_DELAY);
+
+                    xSemaphoreGive(coffee_types_mutex);
+                    return BREW;
+                }
             }
         }
         xSemaphoreGive(coffee_types_mutex);
@@ -251,13 +254,32 @@ void coffee_task(void *pvParameters)
     COFFEE_STATES current_state = SELECT_COFFEE;
     while (1)
     {
+//
+////        xSemaphoreTake(turn, portMAX_DELAY);
+//        xSemaphoreTake(active_semaphore, portMAX_DELAY);
+//
+//        COFFEE_TYPE latte;
+//        current_coffee.active = 1;
+//        strcpy(current_coffee.name, "latte");
+//        current_coffee.price = 26;
+//        current_coffee.amount_pay = 0;
+//        current_coffee.grind_time = 5.0f;
+//        current_coffee.brew_time = 15.0f;
+//        current_coffee.milk_time = 5.0f;
+//        coffee_types[1] = latte;
+//
+////        current_coffee = latte;
+//        brew_state();
         switch (current_state)
         {
         case SELECT_COFFEE:
             current_state = select_coffee_state();
             break;
         case BREW:
+//            lprintf(0, "BREW");
+//            vTaskDelay(1000);
             ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+//            lprintf(0, "adfasdfasdf");
             current_state = brew_state();
             break;
         case C_LOG:

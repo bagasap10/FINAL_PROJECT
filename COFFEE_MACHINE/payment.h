@@ -18,16 +18,16 @@
 #include "led.h"
 #include "log.h"
 /*****************************    Defines    *******************************/
-#define CARD_METHOD             '1'
-#define CASH_METHOD             '2'
+#define CARD_METHOD            '1'
+#define CASH_METHOD            '2'
 #define CARD_LENGTH             16
 #define PIN_LENGTH              4
 #define CARD_MAX_ATTEMPTS       3
-#define CARD_PREPAID            30
-#define CASH_CLOCKWISE          10
-#define CASH_COUNTERCLOCKWISE   5
+#define DEFAULT_CARD            26
+#define CLOCKWISE               20
+#define COUNTERCLOCKWISE        5
 #define CASH_ID                 10
-#define CHANGE_FLASH_TIME_MS    500
+#define SWITCH_POLL_DELAY_MS    500
 
 #ifndef PAYMENT_H_
 #define PAYMENT_H_
@@ -58,6 +58,13 @@ void payment_task(void* pvParameters);
 /*****************************************************************************
  *   Input    : N/A
  *   Output   : -
+ *   Function : Cash state logic / calculate difference out on led
+ ******************************************************************************/
+PAYMENT_STATES change_state();
+
+/*****************************************************************************
+ *   Input    : N/A
+ *   Output   : -
  *   Function : Paymenttype logic / choice of payment type
  ******************************************************************************/
 PAYMENT_STATES paymenttype_state();
@@ -82,13 +89,6 @@ PAYMENT_STATES pin_check_state();
  *   Function : Cash state logic / update payment balance
  ******************************************************************************/
 PAYMENT_STATES cash_state();
-
-/*****************************************************************************
- *   Input    : N/A
- *   Output   : -
- *   Function : Cash state logic / calculate difference out on led
- ******************************************************************************/
-PAYMENT_STATES change_state();
 
 /*****************************************************************************
  *   Input    : INT8U

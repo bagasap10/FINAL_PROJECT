@@ -53,10 +53,10 @@ INT8U key_get(TickType_t xTicksToWait)
 BOOLEAN check_column(INT8U x)
 {
     INT8U y = GPIO_PORTE_DATA_R & 0x0F; // Save the values of the 4 bits for the rows
-    if (y)                                         // If one of them are set...
-    {                 // ...we first find the row number with the function row()
-        INT8U ch = key_catch(x, row(y)); // Now that we have the row and column we look up the corresponding character using the function key_catch
-        xQueueSend(Q_KEY, &ch, 0); // Put the character in a queue so it can be used by another task
+    if (y)
+    {
+        INT8U ch = key_catch(x, row(y));
+        xQueueSend(Q_KEY, &ch, 0);
         return 1;
     }
     return 0;
@@ -117,7 +117,8 @@ void key_task()
             }
             break;
         case 1:
-            if (!(GPIO_PORTE_DATA_R & 0x0F)) // We stay here until the button is released so a button press is not counted more than once
+            // We stay here until the button is released so a button press is not counted more than once
+            if (!(GPIO_PORTE_DATA_R & 0x0F))
             {
                 // Wait for debounce
                 vTaskDelay(pdMS_TO_TICKS(KEY_DEBOUNCE_DELAY_MS));
