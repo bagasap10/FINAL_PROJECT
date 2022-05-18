@@ -18,17 +18,17 @@ lcd.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h
 lcd.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
 lcd.obj: ../tm4c123gh6pm.h
 lcd.obj: ../emp_type.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h
 lcd.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/projdefs.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/portable.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/queue.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/task.h
-lcd.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/list.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/projdefs.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/portable.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h
+lcd.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h
 
 ../lcd.c:
 
@@ -66,25 +66,25 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
 
 ../emp_type.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/projdefs.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/projdefs.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/portable.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/portable.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/queue.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/task.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/list.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h:
 

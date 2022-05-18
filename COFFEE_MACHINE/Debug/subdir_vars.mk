@@ -9,26 +9,26 @@ CMD_SRCS += \
 ../tm4c123gh6pm.cmd 
 
 ASM_SRCS += \
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/port/TivaM4/portasm.asm 
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portasm.asm 
 
 C_SRCS += \
 ../coffee.c \
 ../digitalswitch.c \
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/port/MemMang/heap_2.c \
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/MemMang/heap_2.c \
 ../key.c \
 ../lcd.c \
 ../led.c \
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/src/list.c \
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/src/list.c \
 ../log.c \
 ../main.c \
 ../payment.c \
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/port/TivaM4/port.c \
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/src/queue.c \
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/port.c \
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/src/queue.c \
 ../report.c \
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/port/TivaM4/startup_frt.c \
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/startup_frt.c \
 ../switch.c \
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/port/TivaM4/systick_frt.c \
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/src/tasks.c \
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/systick_frt.c \
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/src/tasks.c \
 ../uart0.c 
 
 C_DEPS += \
@@ -122,24 +122,24 @@ ASM_DEPS__QUOTED += \
 C_SRCS__QUOTED += \
 "../coffee.c" \
 "../digitalswitch.c" \
-"D:/COLLEGE/6th SEM/Embedded Programming/CCS/freeRTOS/port/MemMang/heap_2.c" \
+"D:/Embedded Programming/FINAL_PROJECT/freeRTOS/port/MemMang/heap_2.c" \
 "../key.c" \
 "../lcd.c" \
 "../led.c" \
-"D:/COLLEGE/6th SEM/Embedded Programming/CCS/freeRTOS/src/list.c" \
+"D:/Embedded Programming/FINAL_PROJECT/freeRTOS/src/list.c" \
 "../log.c" \
 "../main.c" \
 "../payment.c" \
-"D:/COLLEGE/6th SEM/Embedded Programming/CCS/freeRTOS/port/TivaM4/port.c" \
-"D:/COLLEGE/6th SEM/Embedded Programming/CCS/freeRTOS/src/queue.c" \
+"D:/Embedded Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/port.c" \
+"D:/Embedded Programming/FINAL_PROJECT/freeRTOS/src/queue.c" \
 "../report.c" \
-"D:/COLLEGE/6th SEM/Embedded Programming/CCS/freeRTOS/port/TivaM4/startup_frt.c" \
+"D:/Embedded Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/startup_frt.c" \
 "../switch.c" \
-"D:/COLLEGE/6th SEM/Embedded Programming/CCS/freeRTOS/port/TivaM4/systick_frt.c" \
-"D:/COLLEGE/6th SEM/Embedded Programming/CCS/freeRTOS/src/tasks.c" \
+"D:/Embedded Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/systick_frt.c" \
+"D:/Embedded Programming/FINAL_PROJECT/freeRTOS/src/tasks.c" \
 "../uart0.c" 
 
 ASM_SRCS__QUOTED += \
-"D:/COLLEGE/6th SEM/Embedded Programming/CCS/freeRTOS/port/TivaM4/portasm.asm" 
+"D:/Embedded Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portasm.asm" 
 
 

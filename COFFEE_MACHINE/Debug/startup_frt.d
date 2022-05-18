@@ -1,6 +1,6 @@
 # FIXED
 
-startup_frt.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/port/TivaM4/startup_frt.c
+startup_frt.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/startup_frt.c
 startup_frt.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h
 startup_frt.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h
 startup_frt.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h
@@ -12,7 +12,7 @@ startup_frt.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/
 startup_frt.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 startup_frt.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/CCS/freeRTOS/port/TivaM4/startup_frt.c:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/startup_frt.c:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h:
 

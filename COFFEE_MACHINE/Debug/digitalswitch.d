@@ -14,17 +14,17 @@ digitalswitch.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/includ
 digitalswitch.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
 digitalswitch.obj: ../tm4c123gh6pm.h
 digitalswitch.obj: ../emp_type.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h
 digitalswitch.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/projdefs.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/portable.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/task.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/list.h
-digitalswitch.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/queue.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/projdefs.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/portable.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h
+digitalswitch.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h
 
 ../digitalswitch.c:
 
@@ -54,25 +54,25 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 
 ../emp_type.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/projdefs.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/projdefs.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/portable.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/portable.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/task.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/list.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/queue.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h:
 

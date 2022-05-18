@@ -15,17 +15,17 @@ coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_
 coffee.obj: ../tm4c123gh6pm.h
 coffee.obj: ../emp_type.h
 coffee.obj: ../key.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h
 coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/projdefs.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/portable.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/queue.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/task.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/list.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/projdefs.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/portable.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h
 coffee.obj: ../lcd.h
 coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h
 coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h
@@ -35,7 +35,7 @@ coffee.obj: ../payment.h
 coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 coffee.obj: ../key.h
 coffee.obj: ../digitalswitch.h
-coffee.obj: D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/semphr.h
+coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h
 coffee.obj: ../led.h
 coffee.obj: ../log.h
 coffee.obj: ../coffee.h
@@ -79,27 +79,27 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 
 ../key.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/projdefs.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/projdefs.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/portable.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/portable.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/deprecated_definitions.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/queue.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/task.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/list.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h:
 
 ../lcd.h:
 
@@ -119,7 +119,7 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../digitalswitch.h:
 
-D:/COLLEGE/6th\ SEM/Embedded\ Programming/Project/FINAL_PROJECT/freeRTOS/inc/semphr.h:
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h:
 
 ../led.h:
 
