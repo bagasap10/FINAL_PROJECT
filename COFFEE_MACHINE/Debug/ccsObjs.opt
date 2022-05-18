@@ -1,0 +1,1 @@
+"./coffee.obj" "./digitalswitch.obj" "./heap_2.obj" "./key.obj" "./lcd.obj" "./led.obj" "./list.obj" "./log.obj" "./main.obj" "./payment.obj" "./port.obj" "./portasm.obj" "./queue.obj" "./report.obj" "./startup_frt.obj" "./switch.obj" "./systick_frt.obj" "./tasks.obj" "./uart0.obj" "../tm4c123gh6pm.cmd" -llibc.a 
