@@ -177,20 +177,19 @@ PAYMENT_STATES pin_check_state()
                             && cardnumber[CARD_LENGTH - 1] % 2 != 0))
             {
                 balance = DEFAULT_CARD;
-                xTaskNotifyGive(coffee_t); // Back to coffee.c, start brewing
+                xTaskNotifyGive(coffee_t);
+                lprintf(0, "");
+                lprintf(1, "");
 
                 while(1)
                 {
-//                    lprintf(1, "i = %d", i);
-                    xQueueSelectFromSet(cash_set_q, portMAX_DELAY); // Wait for brew, it won't continue until
-//                    lprintf(1, "aaaaa");
+                    // Wait for brew
+                    xQueueSelectFromSet(cash_set_q, portMAX_DELAY);
                     if (xSemaphoreTake(active_semaphore, 0) == pdPASS)
                     {
                         xSemaphoreGive(active_semaphore);
-//                        lprintf(1, "bbbb");
                         break;
                     }
-//                    lprintf(1, "ccccccc");
                 }
 
                 xTaskNotifyGive(coffee_t); // Restart
