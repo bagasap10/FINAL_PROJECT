@@ -1,6 +1,7 @@
 # FIXED
 
 main.obj: ../main.c
+main.obj: D:/Embedded\ Programming/FINAL_PROJECT/COFFEE_MACHINE/digiswitch.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h
@@ -11,11 +12,10 @@ main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_ty
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_types.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
-main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
-main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
-main.obj: ../tm4c123gh6pm.h
-main.obj: ../emp_type.h
+main.obj: D:/Embedded\ Programming/FINAL_PROJECT/COFFEE_MACHINE/tm4c123gh6pm.h
+main.obj: D:/Embedded\ Programming/FINAL_PROJECT/COFFEE_MACHINE/emp_type.h
 main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h
+main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
 main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h
 main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/projdefs.h
 main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/portable.h
@@ -24,12 +24,13 @@ main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portmacro.
 main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h
 main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h
 main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h
+main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h
+main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 main.obj: ../uart0.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
-main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h
 main.obj: ../key.h
 main.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/systick_frt.h
 main.obj: ../lcd.h
@@ -58,6 +59,8 @@ main.obj: ../report.h
 
 ../main.c:
 
+D:/Embedded\ Programming/FINAL_PROJECT/COFFEE_MACHINE/digiswitch.h:
+
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h:
@@ -78,15 +81,13 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 
-C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
+D:/Embedded\ Programming/FINAL_PROJECT/COFFEE_MACHINE/tm4c123gh6pm.h:
 
-C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
-
-../tm4c123gh6pm.h:
-
-../emp_type.h:
+D:/Embedded\ Programming/FINAL_PROJECT/COFFEE_MACHINE/emp_type.h:
 
 D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/FreeRTOS.h:
+
+C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
 
 D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/FreeRTOSConfig.h:
 
@@ -104,6 +105,10 @@ D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h:
 
 D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h:
 
+D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h:
+
+C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
+
 ../uart0.h:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h:
@@ -113,8 +118,6 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h:
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h:
-
-D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h:
 
 ../key.h:
 

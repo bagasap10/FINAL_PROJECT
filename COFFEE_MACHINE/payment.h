@@ -11,7 +11,6 @@
 #include "tm4c123gh6pm.h"
 #include "emp_type.h"
 #include "key.h"
-//#include "digiswitch.h"
 #include "lcd.h"
 #include "semphr.h"
 #include "queue.h"
