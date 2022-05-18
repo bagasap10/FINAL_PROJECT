@@ -61,8 +61,8 @@ void payment_task(void* pvParameters)
         case PAYMENT:
             current_state = paymenttype_state();
             break;
-        case CARD:
-            current_state = CARD_NUMBER;
+//        case CARD:
+//            current_state = CARD_NUMBER;
             break;
         case CARD_NUMBER:
             current_state = cardnumber_check_state();
@@ -101,7 +101,7 @@ PAYMENT_STATES paymenttype_state()
         switch (key_get(portMAX_DELAY))
         {
         case CARD_METHOD:
-            return CARD;
+            return CARD_NUMBER;
 
         case CASH_METHOD:
             return CASH;
@@ -208,7 +208,7 @@ PAYMENT_STATES pin_check_state()
                 }
                 else
                 {
-                    return CARD;
+                    return CARD_NUMBER;
                 }
             }
         }

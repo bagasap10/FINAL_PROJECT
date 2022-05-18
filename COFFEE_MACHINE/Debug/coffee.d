@@ -34,7 +34,7 @@ coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xloca
 coffee.obj: ../payment.h
 coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 coffee.obj: ../key.h
-coffee.obj: ../digitalswitch.h
+coffee.obj: ../digiswitch.h
 coffee.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h
 coffee.obj: ../led.h
 coffee.obj: ../log.h
@@ -42,7 +42,7 @@ coffee.obj: ../coffee.h
 coffee.obj: ../payment.h
 coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 coffee.obj: ../key.h
-coffee.obj: ../digitalswitch.h
+coffee.obj: ../digiswitch.h
 coffee.obj: ../led.h
 coffee.obj: ../log.h
 coffee.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
@@ -117,7 +117,7 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../key.h:
 
-../digitalswitch.h:
+../digiswitch.h:
 
 D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h:
 
@@ -133,7 +133,7 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../key.h:
 
-../digitalswitch.h:
+../digiswitch.h:
 
 ../led.h:
 

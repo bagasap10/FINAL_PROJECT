@@ -27,7 +27,7 @@ payment.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/mpu_wrappers.h
 payment.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/queue.h
 payment.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h
 payment.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h
-payment.obj: ../digitalswitch.h
+payment.obj: ../digiswitch.h
 payment.obj: ../lcd.h
 payment.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h
 payment.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h
@@ -41,7 +41,7 @@ payment.obj: ../key.h
 payment.obj: ../payment.h
 payment.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 payment.obj: ../key.h
-payment.obj: ../digitalswitch.h
+payment.obj: ../digiswitch.h
 payment.obj: ../led.h
 payment.obj: ../log.h
 payment.obj: ../switch.h
@@ -49,7 +49,7 @@ payment.obj: ../led.h
 payment.obj: ../payment.h
 payment.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 payment.obj: ../key.h
-payment.obj: ../digitalswitch.h
+payment.obj: ../digiswitch.h
 payment.obj: ../led.h
 payment.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 
@@ -107,7 +107,7 @@ D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/task.h:
 
 D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/list.h:
 
-../digitalswitch.h:
+../digiswitch.h:
 
 ../lcd.h:
 
@@ -135,7 +135,7 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../key.h:
 
-../digitalswitch.h:
+../digiswitch.h:
 
 ../led.h:
 
@@ -151,7 +151,7 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../key.h:
 
-../digitalswitch.h:
+../digiswitch.h:
 
 ../led.h:
 

@@ -11,7 +11,7 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./coffee.obj" \
-"./digitalswitch.obj" \
+"./digiswitch.obj" \
 "./heap_2.obj" \
 "./key.obj" \
 "./lcd.obj" \
@@ -172,8 +172,8 @@ COFFEE_MACHINE.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "coffee.obj" "digitalswitch.obj" "heap_2.obj" "key.obj" "lcd.obj" "led.obj" "list.obj" "log.obj" "main.obj" "payment.obj" "port.obj" "portasm.obj" "queue.obj" "report.obj" "startup_frt.obj" "switch.obj" "systick_frt.obj" "tasks.obj" "uart0.obj" 
-	-$(RM) "coffee.d" "digitalswitch.d" "heap_2.d" "key.d" "lcd.d" "led.d" "list.d" "log.d" "main.d" "payment.d" "port.d" "queue.d" "report.d" "startup_frt.d" "switch.d" "systick_frt.d" "tasks.d" "uart0.d" 
+	-$(RM) "coffee.obj" "digiswitch.obj" "heap_2.obj" "key.obj" "lcd.obj" "led.obj" "list.obj" "log.obj" "main.obj" "payment.obj" "port.obj" "portasm.obj" "queue.obj" "report.obj" "startup_frt.obj" "switch.obj" "systick_frt.obj" "tasks.obj" "uart0.obj" 
+	-$(RM) "coffee.d" "digiswitch.d" "heap_2.d" "key.d" "lcd.d" "led.d" "list.d" "log.d" "main.d" "payment.d" "port.d" "queue.d" "report.d" "startup_frt.d" "switch.d" "systick_frt.d" "tasks.d" "uart0.d" 
 	-$(RM) "portasm.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

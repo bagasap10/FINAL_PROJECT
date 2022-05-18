@@ -1,33 +1,33 @@
 ******************************************************************************
                   TI ARM Linker PC v20.2.5                     
 ******************************************************************************
->> Linked Wed May 18 15:22:52 2022
+>> Linked Wed May 18 15:38:18 2022
 
 OUTPUT FILE NAME:   <COFFEE_MACHINE.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00006351
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00006339
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  00006628  000399d8  R  X
-  SRAM                  20000000   00008000  000020a8  00005f58  RW X
+  FLASH                 00000000   00040000  00006610  000399f0  R  X
+  SRAM                  20000000   00008000  00002100  00005f00  RW X
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00006628   00006628    r-x
+00000000    00000000    00006610   00006610    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  0000026c    0000026c    00006268   00006268    r-x .text
-  000064d4    000064d4    0000011c   0000011c    r-- .const
-  000065f0    000065f0    00000038   00000038    r-- .cinit
-20000000    20000000    000020ae   00000000    rw-
-  20000000    20000000    00001e62   00000000    rw- .bss
-  20001e68    20001e68    00000200   00000000    rw- .stack
-  20002068    20002068    00000046   00000000    rw- .data
+  0000026c    0000026c    00006250   00006250    r-x .text
+  000064bc    000064bc    0000011c   0000011c    r-- .const
+  000065d8    000065d8    00000038   00000038    r-- .cinit
+20000000    20000000    00002106   00000000    rw-
+  20000000    20000000    00001eba   00000000    rw- .bss
+  20001ec0    20001ec0    00000200   00000000    rw- .stack
+  200020c0    200020c0    00000046   00000000    rw- .data
 
 
 SECTION ALLOCATION MAP
@@ -38,139 +38,139 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     startup_frt.obj (.intvecs)
 
-.text      0    0000026c    00006268     
+.text      0    0000026c    00006250     
                   0000026c    000014f4     tasks.obj (.text)
                   00001760    00000d50     queue.obj (.text)
                   000024b0    00000a4e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
                   00002efe    00000002                                   : div0.asm.obj (.text)
                   00002f00    000005f8     coffee.obj (.text)
-                  000034f8    000004cc     payment.obj (.text)
-                  000039c4    00000420     lcd.obj (.text)
-                  00003de4    000003e8     report.obj (.text)
-                  000041cc    00000290     uart0.obj (.text)
-                  0000445c    00000270     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_a)
-                  000046cc    000001dc     key.obj (.text)
-                  000048a8    000001d0     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_g)
-                  00004a78    000001c8     log.obj (.text)
-                  00004c40    000001b8     heap_2.obj (.text)
-                  00004df8    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
-                  00004fae    00000002     --HOLE-- [fill = 0]
-                  00004fb0    00000174     main.obj (.text)
-                  00005124    00000150     digitalswitch.obj (.text)
-                  00005274    0000013c     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_e)
-                  000053b0    0000013c     port.obj (.text)
-                  000054ec    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.asm.obj (.text)
-                  00005622    0000012a     list.obj (.text)
-                  0000574c    00000124     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:fcvt)
-                  00005870    00000110                                   : s_scalbn.c.obj (.text:scalbn)
-                  00005980    000000fc                                   : fd_mul_t2.asm.obj (.text)
-                  00005a7c    000000da     portasm.obj (.text)
-                  00005b56    00000002     --HOLE-- [fill = 0]
-                  00005b58    000000b1     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ltostr)
-                  00005c09    00000001     --HOLE-- [fill = 0]
-                  00005c0a    0000009c                                   : memcpy_t2.asm.obj (.text)
-                  00005ca6    00000096                                   : ull_div_t2.asm.obj (.text)
-                  00005d3c    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
-                  00005dc2    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
-                  00005e48    0000007a                                   : memset_t2.asm.obj (.text)
-                  00005ec2    00000002     --HOLE-- [fill = 0]
-                  00005ec4    00000070     switch.obj (.text)
-                  00005f34    0000006e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_mcpy)
-                  00005fa2    00000002     --HOLE-- [fill = 0]
-                  00005fa4    0000006c     systick_frt.obj (.text)
-                  00006010    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  00006078    00000064                                   : s_frexp.c.obj (.text:frexp)
-                  000060dc    00000060     led.obj (.text)
-                  0000613c    00000056     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_f)
-                  00006192    00000054                                   : _ltoa.c.obj (.text:__TI_ltoa)
-                  000061e6    00000052                                   : _printfi.c.obj (.text:_ecpy)
-                  00006238    0000004c                                   : atoi.c.obj (.text:atoi)
-                  00006284    00000048                                   : fd_toi_t2.asm.obj (.text)
-                  000062cc    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  00006310    0000003e                                   : _printfi.c.obj (.text:_fcpy)
-                  0000634e    00000002     --HOLE-- [fill = 0]
-                  00006350    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
-                  00006384    0000002e                                   : i_tofd_t2.asm.obj (.text)
-                  000063b2    00000002     --HOLE-- [fill = 0]
-                  000063b4    00000028                                   : vsprintf.c.obj (.text:vsprintf)
-                  000063dc    0000001c                                   : memccpy.c.obj (.text:memccpy)
-                  000063f8    0000001a                                   : s_copysign.c.obj (.text:copysign)
-                  00006412    00000018                                   : vsprintf.c.obj (.text:_outs)
-                  0000642a    00000018                                   : strcmp.c.obj (.text:strcmp)
-                  00006442    00000016                                   : strchr.c.obj (.text:strchr)
-                  00006458    00000014                                   : strcpy.c.obj (.text:strcpy)
-                  0000646c    00000014                                   : strlen.c.obj (.text:strlen)
-                  00006480    00000012                                   : wcslen.c.obj (.text:wcslen)
-                  00006492    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  000064a0    0000000c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
-                  000064ac    0000000c     startup_frt.obj (.text)
-                  000064b8    0000000a     rtsv7M4_T_le_v4SPD16_eabi.lib : vsprintf.c.obj (.text:_outc)
-                  000064c2    00000002     --HOLE-- [fill = 0]
-                  000064c4    00000008                                   : errno.c.obj (.text:__aeabi_errno_addr)
-                  000064cc    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
-                  000064d0    00000004                                   : exit.c.obj (.text:abort:abort)
+                  000034f8    000004b4     payment.obj (.text)
+                  000039ac    00000420     lcd.obj (.text)
+                  00003dcc    000003e8     report.obj (.text)
+                  000041b4    00000290     uart0.obj (.text)
+                  00004444    00000270     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_a)
+                  000046b4    000001dc     key.obj (.text)
+                  00004890    000001d0     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_g)
+                  00004a60    000001c8     log.obj (.text)
+                  00004c28    000001b8     heap_2.obj (.text)
+                  00004de0    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
+                  00004f96    00000002     --HOLE-- [fill = 0]
+                  00004f98    00000174     main.obj (.text)
+                  0000510c    00000150     digiswitch.obj (.text)
+                  0000525c    0000013c     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_e)
+                  00005398    0000013c     port.obj (.text)
+                  000054d4    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.asm.obj (.text)
+                  0000560a    0000012a     list.obj (.text)
+                  00005734    00000124     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:fcvt)
+                  00005858    00000110                                   : s_scalbn.c.obj (.text:scalbn)
+                  00005968    000000fc                                   : fd_mul_t2.asm.obj (.text)
+                  00005a64    000000da     portasm.obj (.text)
+                  00005b3e    00000002     --HOLE-- [fill = 0]
+                  00005b40    000000b1     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ltostr)
+                  00005bf1    00000001     --HOLE-- [fill = 0]
+                  00005bf2    0000009c                                   : memcpy_t2.asm.obj (.text)
+                  00005c8e    00000096                                   : ull_div_t2.asm.obj (.text)
+                  00005d24    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  00005daa    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
+                  00005e30    0000007a                                   : memset_t2.asm.obj (.text)
+                  00005eaa    00000002     --HOLE-- [fill = 0]
+                  00005eac    00000070     switch.obj (.text)
+                  00005f1c    0000006e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_mcpy)
+                  00005f8a    00000002     --HOLE-- [fill = 0]
+                  00005f8c    0000006c     systick_frt.obj (.text)
+                  00005ff8    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00006060    00000064                                   : s_frexp.c.obj (.text:frexp)
+                  000060c4    00000060     led.obj (.text)
+                  00006124    00000056     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_f)
+                  0000617a    00000054                                   : _ltoa.c.obj (.text:__TI_ltoa)
+                  000061ce    00000052                                   : _printfi.c.obj (.text:_ecpy)
+                  00006220    0000004c                                   : atoi.c.obj (.text:atoi)
+                  0000626c    00000048                                   : fd_toi_t2.asm.obj (.text)
+                  000062b4    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  000062f8    0000003e                                   : _printfi.c.obj (.text:_fcpy)
+                  00006336    00000002     --HOLE-- [fill = 0]
+                  00006338    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  0000636c    0000002e                                   : i_tofd_t2.asm.obj (.text)
+                  0000639a    00000002     --HOLE-- [fill = 0]
+                  0000639c    00000028                                   : vsprintf.c.obj (.text:vsprintf)
+                  000063c4    0000001c                                   : memccpy.c.obj (.text:memccpy)
+                  000063e0    0000001a                                   : s_copysign.c.obj (.text:copysign)
+                  000063fa    00000018                                   : vsprintf.c.obj (.text:_outs)
+                  00006412    00000018                                   : strcmp.c.obj (.text:strcmp)
+                  0000642a    00000016                                   : strchr.c.obj (.text:strchr)
+                  00006440    00000014                                   : strcpy.c.obj (.text:strcpy)
+                  00006454    00000014                                   : strlen.c.obj (.text:strlen)
+                  00006468    00000012                                   : wcslen.c.obj (.text:wcslen)
+                  0000647a    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00006488    0000000c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  00006494    0000000c     startup_frt.obj (.text)
+                  000064a0    0000000a     rtsv7M4_T_le_v4SPD16_eabi.lib : vsprintf.c.obj (.text:_outc)
+                  000064aa    00000002     --HOLE-- [fill = 0]
+                  000064ac    00000008                                   : errno.c.obj (.text:__aeabi_errno_addr)
+                  000064b4    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
+                  000064b8    00000004                                   : exit.c.obj (.text:abort:abort)
 
-.const     0    000064d4    0000011c     
-                  000064d4    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
-                  000065d5    0000000c     key.obj (.const:$P$T0$1)
-                  000065e1    0000000a     lcd.obj (.const:.string:LCD_init_sequense)
-                  000065eb    00000001     --HOLE-- [fill = 0]
-                  000065ec    00000004     port.obj (.const)
+.const     0    000064bc    0000011c     
+                  000064bc    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  000065bd    0000000c     key.obj (.const:$P$T0$1)
+                  000065c9    0000000a     lcd.obj (.const:.string:LCD_init_sequense)
+                  000065d3    00000001     --HOLE-- [fill = 0]
+                  000065d4    00000004     port.obj (.const)
 
-.cinit     0    000065f0    00000038     
-                  000065f0    00000012     (.cinit..data.load) [load image, compression = lzss]
-                  00006602    00000002     --HOLE-- [fill = 0]
-                  00006604    0000000c     (__TI_handler_table)
-                  00006610    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00006618    00000010     (__TI_cinit_table)
+.cinit     0    000065d8    00000038     
+                  000065d8    00000012     (.cinit..data.load) [load image, compression = lzss]
+                  000065ea    00000002     --HOLE-- [fill = 0]
+                  000065ec    0000000c     (__TI_handler_table)
+                  000065f8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00006600    00000010     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
 
-.bss       0    20000000    00001e62     UNINITIALIZED
+.bss       0    20000000    00001eba     UNINITIALIZED
                   20000000    00001b58     heap_2.obj (.bss:ucHeap)
                   20001b58    000000c8     tasks.obj (.bss:pxReadyTasksLists)
-                  20001c20    000000a0     (.common:coffee_types)
-                  20001cc0    00000078     (.common:log_array)
-                  20001d38    00000048     (.common:buffer)
-                  20001d80    00000020     (.common:current_coffee)
-                  20001da0    00000014     tasks.obj (.bss:xDelayedTaskList1)
-                  20001db4    00000014     tasks.obj (.bss:xDelayedTaskList2)
-                  20001dc8    00000014     tasks.obj (.bss:xPendingReadyList)
-                  20001ddc    00000014     tasks.obj (.bss:xSuspendedTaskList)
-                  20001df0    00000014     tasks.obj (.bss:xTasksWaitingTermination)
-                  20001e04    00000008     tasks.obj (.bss)
-                  20001e0c    00000008     heap_2.obj (.bss:xEnd)
-                  20001e14    00000008     heap_2.obj (.bss:xStart)
-                  20001e1c    00000008     (.common:cardnumber)
-                  20001e24    00000004     (.common:Q_KEY)
-                  20001e28    00000004     (.common:Q_LCD)
-                  20001e2c    00000004     (.common:active_semaphore)
-                  20001e30    00000004     (.common:balance_mutex)
-                  20001e34    00000004     (.common:cash_set)
-                  20001e38    00000004     (.common:coffee_t)
-                  20001e3c    00000004     (.common:coffee_types_mutex)
-                  20001e40    00000004     (.common:digiswitch_t)
-                  20001e44    00000004     (.common:ds_input_queue)
-                  20001e48    00000004     (.common:log_array_semaphore)
-                  20001e4c    00000004     (.common:log_coffee_q)
-                  20001e50    00000004     (.common:log_payment_q)
-                  20001e54    00000004     (.common:payment_t)
-                  20001e58    00000004     (.common:uart0_rx_queue)
-                  20001e5c    00000004     (.common:uart0_tx_queue)
-                  20001e60    00000001     (.common:LCD_init)
-                  20001e61    00000001     (.common:balance)
+                  20001c20    000000c8     (.common:log_array)
+                  20001ce8    000000a0     (.common:coffee_types)
+                  20001d88    00000048     (.common:buffer)
+                  20001dd0    00000020     (.common:current_coffee)
+                  20001df0    00000014     tasks.obj (.bss:xDelayedTaskList1)
+                  20001e04    00000014     tasks.obj (.bss:xDelayedTaskList2)
+                  20001e18    00000014     tasks.obj (.bss:xPendingReadyList)
+                  20001e2c    00000014     tasks.obj (.bss:xSuspendedTaskList)
+                  20001e40    00000014     tasks.obj (.bss:xTasksWaitingTermination)
+                  20001e54    00000010     (.common:cardnumber)
+                  20001e64    00000008     tasks.obj (.bss)
+                  20001e6c    00000008     heap_2.obj (.bss:xEnd)
+                  20001e74    00000008     heap_2.obj (.bss:xStart)
+                  20001e7c    00000004     (.common:Q_KEY)
+                  20001e80    00000004     (.common:Q_LCD)
+                  20001e84    00000004     (.common:active_semaphore)
+                  20001e88    00000004     (.common:balance_mutex)
+                  20001e8c    00000004     (.common:cash_set)
+                  20001e90    00000004     (.common:coffee_t)
+                  20001e94    00000004     (.common:coffee_types_mutex)
+                  20001e98    00000004     (.common:digiswitch_t)
+                  20001e9c    00000004     (.common:ds_input_queue)
+                  20001ea0    00000004     (.common:log_array_semaphore)
+                  20001ea4    00000004     (.common:log_coffee_q)
+                  20001ea8    00000004     (.common:log_payment_q)
+                  20001eac    00000004     (.common:payment_t)
+                  20001eb0    00000004     (.common:uart0_rx_queue)
+                  20001eb4    00000004     (.common:uart0_tx_queue)
+                  20001eb8    00000001     (.common:LCD_init)
+                  20001eb9    00000001     (.common:balance)
 
-.data      0    20002068    00000046     UNINITIALIZED
-                  20002068    00000034     tasks.obj (.data)
-                  2000209c    00000008     heap_2.obj (.data)
-                  200020a4    00000004     port.obj (.data)
-                  200020a8    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.data)
-                  200020ac    00000002     lcd.obj (.data)
+.data      0    200020c0    00000046     UNINITIALIZED
+                  200020c0    00000034     tasks.obj (.data)
+                  200020f4    00000008     heap_2.obj (.data)
+                  200020fc    00000004     port.obj (.data)
+                  20002100    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.data)
+                  20002104    00000002     lcd.obj (.data)
 
-.stack     0    20001e68    00000200     UNINITIALIZED
-                  20001e68    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
-                  20001e6c    000001fc     --HOLE--
+.stack     0    20001ec0    00000200     UNINITIALIZED
+                  20001ec0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20001ec4    000001fc     --HOLE--
 
 __llvm_prf_cnts 
 *          0    20000000    00000000     UNINITIALIZED
@@ -184,15 +184,15 @@ MODULE SUMMARY
        tasks.obj                    5364    0         360    
        queue.obj                    3408    0         0      
        coffee.obj                   1528    0         200    
-       payment.obj                  1228    0         17     
+       payment.obj                  1204    0         25     
        lcd.obj                      1056    10        7      
        report.obj                   1000    0         72     
+       log.obj                      456     0         212    
        uart0.obj                    656     0         8      
        startup_frt.obj              12      620       0      
-       log.obj                      456     0         132    
        key.obj                      476     12        4      
        main.obj                     372     0         8      
-       digitalswitch.obj            336     0         8      
+       digiswitch.obj               336     0         8      
        port.obj                     316     4         4      
        list.obj                     298     0         0      
        portasm.obj                  218     0         0      
@@ -200,7 +200,7 @@ MODULE SUMMARY
        systick_frt.obj              108     0         0      
        led.obj                      96      0         0      
     +--+----------------------------+-------+---------+---------+
-       Total:                       17480   646       7844   
+       Total:                       17456   646       7932   
                                                              
     C:\ti\ccs1110\ccs\tools\compiler\ti-cgt-arm_20.2.5.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
        _printfi.c.obj               4851    0         0      
@@ -241,19 +241,19 @@ MODULE SUMMARY
        Stack:                       0       0         512    
        Linker Generated:            0       54        0      
     +--+----------------------------+-------+---------+---------+
-       Grand Total:                 25177   957       8360   
+       Grand Total:                 25153   957       8448   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00006618 records: 2, size/record: 8, table size: 16
-	.data: load addr=000065f0, load size=00000012 bytes, run addr=20002068, run size=00000046 bytes, compression=lzss
-	.bss: load addr=00006610, load size=00000008 bytes, run addr=20000000, run size=00001e62 bytes, compression=zero_init
+__TI_cinit_table @ 00006600 records: 2, size/record: 8, table size: 16
+	.data: load addr=000065d8, load size=00000012 bytes, run addr=200020c0, run size=00000046 bytes, compression=lzss
+	.bss: load addr=000065f8, load size=00000008 bytes, run addr=20000000, run size=00001eba bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00006604 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 000065ec records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -263,171 +263,171 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address   name                               
 -------   ----                               
-000064d1  C$$EXIT                            
-20001e60  LCD_init                           
-000065e1  LCD_init_sequense                  
-200020ac  LCD_state                          
-20001e24  Q_KEY                              
-20001e28  Q_LCD                              
-000064ad  ResetISR                           
-00003bd5  Set_cursor                         
-20002068  __STACK_END                        
+000064b9  C$$EXIT                            
+20001eb8  LCD_init                           
+000065c9  LCD_init_sequense                  
+20002104  LCD_state                          
+20001e7c  Q_KEY                              
+20001e80  Q_LCD                              
+00006495  ResetISR                           
+00003bbd  Set_cursor                         
+200020c0  __STACK_END                        
 00000200  __STACK_SIZE                       
-20002068  __STACK_TOP                        
-00006618  __TI_CINIT_Base                    
-00006628  __TI_CINIT_Limit                   
-00006604  __TI_Handler_Table_Base            
-00006610  __TI_Handler_Table_Limit           
-000062cd  __TI_auto_init_nobinit_nopinit     
-00006011  __TI_decompress_lzss               
-00006493  __TI_decompress_none               
-00006193  __TI_ltoa                          
+200020c0  __STACK_TOP                        
+00006600  __TI_CINIT_Base                    
+00006610  __TI_CINIT_Limit                   
+000065ec  __TI_Handler_Table_Base            
+000065f8  __TI_Handler_Table_Limit           
+000062b5  __TI_auto_init_nobinit_nopinit     
+00005ff9  __TI_decompress_lzss               
+0000647b  __TI_decompress_none               
+0000617b  __TI_ltoa                          
 ffffffff  __TI_pprof_out_hndl                
 000024b1  __TI_printfi                       
 ffffffff  __TI_prof_data_size                
 ffffffff  __TI_prof_data_start               
 00000000  __TI_static_base__                 
-000064a1  __TI_zero_init                     
-00005d3d  __aeabi_cdcmpeq                    
-00005d3d  __aeabi_cdcmple                    
-00005dc3  __aeabi_cdrcmple                   
-00006285  __aeabi_d2iz                       
-00004e03  __aeabi_dadd                       
-000054ed  __aeabi_ddiv                       
-00005981  __aeabi_dmul                       
-00004df9  __aeabi_dsub                       
-000064c5  __aeabi_errno_addr                 
-00006385  __aeabi_i2d                        
+00006489  __TI_zero_init                     
+00005d25  __aeabi_cdcmpeq                    
+00005d25  __aeabi_cdcmple                    
+00005dab  __aeabi_cdrcmple                   
+0000626d  __aeabi_d2iz                       
+00004deb  __aeabi_dadd                       
+000054d5  __aeabi_ddiv                       
+00005969  __aeabi_dmul                       
+00004de1  __aeabi_dsub                       
+000064ad  __aeabi_errno_addr                 
+0000636d  __aeabi_i2d                        
 00002eff  __aeabi_idiv0                      
 00002eff  __aeabi_ldiv0                      
-00005e49  __aeabi_memclr                     
-00005e49  __aeabi_memclr4                    
-00005e49  __aeabi_memclr8                    
-00005c0b  __aeabi_memcpy                     
-00005c0b  __aeabi_memcpy4                    
-00005c0b  __aeabi_memcpy8                    
-00005e4b  __aeabi_memset                     
-00005e4b  __aeabi_memset4                    
-00005e4b  __aeabi_memset8                    
-00005ca7  __aeabi_uldivmod                   
+00005e31  __aeabi_memclr                     
+00005e31  __aeabi_memclr4                    
+00005e31  __aeabi_memclr8                    
+00005bf3  __aeabi_memcpy                     
+00005bf3  __aeabi_memcpy4                    
+00005bf3  __aeabi_memcpy8                    
+00005e33  __aeabi_memset                     
+00005e33  __aeabi_memset4                    
+00005e33  __aeabi_memset8                    
+00005c8f  __aeabi_uldivmod                   
 ffffffff  __binit__                          
 ffffffff  __c_args__                         
 UNDEFED   __mpu_init                         
-20001e68  __stack                            
+20001ec0  __stack                            
 20000000  __start___llvm_prf_cnts            
 20000000  __stop___llvm_prf_cnts             
-00006351  _c_int00_noargs                    
-000064d4  _ctypes_                           
+00006339  _c_int00_noargs                    
+000064bc  _ctypes_                           
 UNDEFED   _system_post_cinit                 
-000064cd  _system_pre_init                   
-000064d1  abort                              
-20001e2c  active_semaphore                   
-00006239  atoi                               
-20001e61  balance                            
-20001e30  balance_mutex                      
+000064b5  _system_pre_init                   
+000064b9  abort                              
+20001e84  active_semaphore                   
+00006221  atoi                               
+20001eb9  balance                            
+20001e88  balance_mutex                      
 ffffffff  binit                              
 00003025  brew_state                         
-20001d38  buffer                             
-20001e1c  cardnumber                         
-000035f9  cardnumber_check_state             
-20001e34  cash_set                           
-000037d5  cash_state                         
-000038d7  change_state                       
-00004763  check_column                       
-00003bc1  clr_LCD                            
+20001d88  buffer                             
+20001e54  cardnumber                         
+000035e1  cardnumber_check_state             
+20001e8c  cash_set                           
+000037bd  cash_state                         
+000038bf  change_state                       
+0000474b  check_column                       
+00003ba9  clr_LCD                            
 00002f01  coffee_init                        
-20001e38  coffee_t                           
+20001e90  coffee_t                           
 0000342b  coffee_task                        
-20001c20  coffee_types                       
-20001e3c  coffee_types_mutex                 
-000063f9  copysign                           
-000063f9  copysignl                          
-20001d80  current_coffee                     
-00005223  digiswitch_get                     
-00005125  digiswitch_init                    
-00005183  digiswitch_isr                     
-20001e40  digiswitch_t                       
-000051f1  digiswitch_task                    
-20001e44  ds_input_queue                     
-200020a8  errno                              
-00006079  frexp                              
-00006079  frexpl                             
+20001ce8  coffee_types                       
+20001e94  coffee_types_mutex                 
+000063e1  copysign                           
+000063e1  copysignl                          
+20001dd0  current_coffee                     
+0000520b  digiswitch_get                     
+0000510d  digiswitch_init                    
+0000516b  digiswitch_isr                     
+20001e98  digiswitch_t                       
+000051d9  digiswitch_task                    
+20001e9c  ds_input_queue                     
+20002100  errno                              
+00006061  frexp                              
+00006061  frexpl                             
 00000000  g_pfnVectors                       
-00005ef1  get_sw1                            
-00005f05  get_sw2                            
-00003bcb  home_LCD                           
-00005fa5  init_systick                       
-00003795  key2int                            
-00004719  key_catch                          
-00004747  key_get                            
-000047a7  key_init                           
-000047e7  key_task                           
-00003c21  lcd_init                           
-00003cc9  lcd_task                           
-000041cd  lcrh_databits                      
-00004211  lcrh_parity                        
-000041f7  lcrh_stopbits                      
-00005871  ldexp                              
-00005871  ldexpl                             
-00006115  led_green                          
-000060dd  led_init                           
-00006121  led_off                            
-000060fd  led_red                            
-00006109  led_yellow                         
-20001cc0  log_array                          
-20001e48  log_array_semaphore                
-00004bb5  log_coffee                         
-20001e4c  log_coffee_q                       
-00004a79  log_init                           
-00003e9d  log_list_menu                      
-00004be1  log_nextlog                        
-00004bcb  log_payment                        
-20001e50  log_payment_q                      
-00004ab1  log_task                           
-00003c6b  lprintf                            
-00004fb1  main                               
-00003e39  main_menu                          
-000063dd  memccpy                            
-00005c0b  memcpy                             
-00005e51  memset                             
-000039fd  move_LCD                           
-00003be5  out_LCD                            
-00003b55  out_LCD_high                       
-00003b0b  out_LCD_low                        
+00005ed9  get_sw1                            
+00005eed  get_sw2                            
+00003bb3  home_LCD                           
+00005f8d  init_systick                       
+0000377d  key2int                            
+00004701  key_catch                          
+0000472f  key_get                            
+0000478f  key_init                           
+000047cf  key_task                           
+00003c09  lcd_init                           
+00003cb1  lcd_task                           
+000041b5  lcrh_databits                      
+000041f9  lcrh_parity                        
+000041df  lcrh_stopbits                      
+00005859  ldexp                              
+00005859  ldexpl                             
+000060fd  led_green                          
+000060c5  led_init                           
+00006109  led_off                            
+000060e5  led_red                            
+000060f1  led_yellow                         
+20001c20  log_array                          
+20001ea0  log_array_semaphore                
+00004b9d  log_coffee                         
+20001ea4  log_coffee_q                       
+00004a61  log_init                           
+00003e85  log_list_menu                      
+00004bc9  log_nextlog                        
+00004bb3  log_payment                        
+20001ea8  log_payment_q                      
+00004a99  log_task                           
+00003c53  lprintf                            
+00004f99  main                               
+00003e21  main_menu                          
+000063c5  memccpy                            
+00005bf3  memcpy                             
+00005e39  memset                             
+000039e5  move_LCD                           
+00003bcd  out_LCD                            
+00003b3d  out_LCD_high                       
+00003af3  out_LCD_low                        
 000034f9  payment_init                       
-20001e54  payment_t                          
+20001eac  payment_t                          
 0000351f  payment_task                       
-000035c5  paymenttype_state                  
+000035ad  paymenttype_state                  
 00000b07  pcTaskGetName                      
-0000365d  pin_check_state                    
-00004c41  pvPortMalloc                       
+00003645  pin_check_state                    
+00004c29  pvPortMalloc                       
 0000128d  pvTaskIncrementMutexHeldCount      
-20002068  pxCurrentTCB                       
-000053b1  pxPortInitialiseStack              
-000046cd  row                                
-00003f7f  sales_report_menu                  
-00005871  scalbn                             
-00005871  scalbnl                            
+200020c0  pxCurrentTCB                       
+00005399  pxPortInitialiseStack              
+000046b5  row                                
+00003f67  sales_report_menu                  
+00005859  scalbn                             
+00005859  scalbnl                            
 0000333d  select_coffee_state                
-00006443  strchr                             
-0000642b  strcmp                             
-00006459  strcpy                             
-0000646d  strlen                             
-00005ec5  switch_init                        
-00004265  uart0_init                         
-00004341  uart0_read_isr                     
-20001e58  uart0_rx_queue                     
-000043a3  uart0_sendstring                   
-20001e5c  uart0_tx_queue                     
-00004259  uart0_tx_rdy                       
-0000437f  uart0_write_task                   
-00003de5  ui_clear_screen                    
-00003dfd  ui_task                            
-000065ec  ulMaxSyscallInterruptPriority      
-00005a8d  ulPortGetIPSR                      
+0000642b  strchr                             
+00006413  strcmp                             
+00006441  strcpy                             
+00006455  strlen                             
+00005ead  switch_init                        
+0000424d  uart0_init                         
+00004329  uart0_read_isr                     
+20001eb0  uart0_rx_queue                     
+0000438b  uart0_sendstring                   
+20001eb4  uart0_tx_queue                     
+00004241  uart0_tx_rdy                       
+00004367  uart0_write_task                   
+00003dcd  ui_clear_screen                    
+00003de5  ui_task                            
+000065d4  ulMaxSyscallInterruptPriority      
+00005a75  ulPortGetIPSR                      
 000012ad  ulTaskNotifyTake                   
-000043df  uprintf                            
-00005705  uxListRemove                       
+000043c7  uprintf                            
+000056ed  uxListRemove                       
 000020c1  uxQueueMessagesWaiting             
 000020f7  uxQueueMessagesWaitingFromISR      
 000020d7  uxQueueSpacesAvailable             
@@ -435,19 +435,19 @@ ffffffff  binit
 000005cf  uxTaskPriorityGet                  
 000005f3  uxTaskPriorityGetFromISR           
 00001265  uxTaskResetEventItemValue          
-00005623  vListInitialise                    
-00005653  vListInitialiseItem                
-0000569f  vListInsert                        
-00005663  vListInsertEnd                     
-00005b49  vPortEnableVFP                     
-00005451  vPortEndScheduler                  
-00005453  vPortEnterCritical                 
-00005473  vPortExitCritical                  
-00004d39  vPortFree                          
-00004d9d  vPortInitialiseBlocks              
-00005b05  vPortSVCHandler                    
-000054af  vPortSetupTimerInterrupt           
-00005b25  vPortStartFirstTask                
+0000560b  vListInitialise                    
+0000563b  vListInitialiseItem                
+00005687  vListInsert                        
+0000564b  vListInsertEnd                     
+00005b31  vPortEnableVFP                     
+00005439  vPortEndScheduler                  
+0000543b  vPortEnterCritical                 
+0000545b  vPortExitCritical                  
+00004d21  vPortFree                          
+00004d85  vPortInitialiseBlocks              
+00005aed  vPortSVCHandler                    
+00005497  vPortSetupTimerInterrupt           
+00005b0d  vPortStartFirstTask                
 0000210d  vQueueDelete                       
 00000599  vTaskDelay                         
 00000509  vTaskDelayUntil                    
@@ -467,17 +467,17 @@ ffffffff  binit
 00000765  vTaskSuspend                       
 000009df  vTaskSuspendAll                    
 00000c51  vTaskSwitchContext                 
-000063b5  vsprintf                           
-00006481  wcslen                             
-000039c5  wr_ch_LCD                          
-00003b6b  wr_ctrl_LCD                        
-00003af5  wr_ctrl_LCD_high                   
-00003a33  wr_ctrl_LCD_low                    
-000039df  wr_str_LCD                         
-00004d97  xPortGetFreeHeapSize               
-00005aa5  xPortPendSVHandler                 
-0000541b  xPortStartScheduler                
-00005489  xPortSysTickHandler                
+0000639d  vsprintf                           
+00006469  wcslen                             
+000039ad  wr_ch_LCD                          
+00003b53  wr_ctrl_LCD                        
+00003add  wr_ctrl_LCD_high                   
+00003a1b  wr_ctrl_LCD_low                    
+000039c7  wr_str_LCD                         
+00004d7f  xPortGetFreeHeapSize               
+00005a8d  xPortPendSVHandler                 
+00005403  xPortStartScheduler                
+00005471  xPortSysTickHandler                
 0000239d  xQueueAddToSet                     
 000018bb  xQueueCreateMutex                  
 00002389  xQueueCreateSet                    
@@ -595,172 +595,172 @@ address   name
 0000342b  coffee_task                        
 000034f9  payment_init                       
 0000351f  payment_task                       
-000035c5  paymenttype_state                  
-000035f9  cardnumber_check_state             
-0000365d  pin_check_state                    
-00003795  key2int                            
-000037d5  cash_state                         
-000038d7  change_state                       
-000039c5  wr_ch_LCD                          
-000039df  wr_str_LCD                         
-000039fd  move_LCD                           
-00003a33  wr_ctrl_LCD_low                    
-00003af5  wr_ctrl_LCD_high                   
-00003b0b  out_LCD_low                        
-00003b55  out_LCD_high                       
-00003b6b  wr_ctrl_LCD                        
-00003bc1  clr_LCD                            
-00003bcb  home_LCD                           
-00003bd5  Set_cursor                         
-00003be5  out_LCD                            
-00003c21  lcd_init                           
-00003c6b  lprintf                            
-00003cc9  lcd_task                           
-00003de5  ui_clear_screen                    
-00003dfd  ui_task                            
-00003e39  main_menu                          
-00003e9d  log_list_menu                      
-00003f7f  sales_report_menu                  
-000041cd  lcrh_databits                      
-000041f7  lcrh_stopbits                      
-00004211  lcrh_parity                        
-00004259  uart0_tx_rdy                       
-00004265  uart0_init                         
-00004341  uart0_read_isr                     
-0000437f  uart0_write_task                   
-000043a3  uart0_sendstring                   
-000043df  uprintf                            
-000046cd  row                                
-00004719  key_catch                          
-00004747  key_get                            
-00004763  check_column                       
-000047a7  key_init                           
-000047e7  key_task                           
-00004a79  log_init                           
-00004ab1  log_task                           
-00004bb5  log_coffee                         
-00004bcb  log_payment                        
-00004be1  log_nextlog                        
-00004c41  pvPortMalloc                       
-00004d39  vPortFree                          
-00004d97  xPortGetFreeHeapSize               
-00004d9d  vPortInitialiseBlocks              
-00004df9  __aeabi_dsub                       
-00004e03  __aeabi_dadd                       
-00004fb1  main                               
-00005125  digiswitch_init                    
-00005183  digiswitch_isr                     
-000051f1  digiswitch_task                    
-00005223  digiswitch_get                     
-000053b1  pxPortInitialiseStack              
-0000541b  xPortStartScheduler                
-00005451  vPortEndScheduler                  
-00005453  vPortEnterCritical                 
-00005473  vPortExitCritical                  
-00005489  xPortSysTickHandler                
-000054af  vPortSetupTimerInterrupt           
-000054ed  __aeabi_ddiv                       
-00005623  vListInitialise                    
-00005653  vListInitialiseItem                
-00005663  vListInsertEnd                     
-0000569f  vListInsert                        
-00005705  uxListRemove                       
-00005871  ldexp                              
-00005871  ldexpl                             
-00005871  scalbn                             
-00005871  scalbnl                            
-00005981  __aeabi_dmul                       
-00005a8d  ulPortGetIPSR                      
-00005aa5  xPortPendSVHandler                 
-00005b05  vPortSVCHandler                    
-00005b25  vPortStartFirstTask                
-00005b49  vPortEnableVFP                     
-00005c0b  __aeabi_memcpy                     
-00005c0b  __aeabi_memcpy4                    
-00005c0b  __aeabi_memcpy8                    
-00005c0b  memcpy                             
-00005ca7  __aeabi_uldivmod                   
-00005d3d  __aeabi_cdcmpeq                    
-00005d3d  __aeabi_cdcmple                    
-00005dc3  __aeabi_cdrcmple                   
-00005e49  __aeabi_memclr                     
-00005e49  __aeabi_memclr4                    
-00005e49  __aeabi_memclr8                    
-00005e4b  __aeabi_memset                     
-00005e4b  __aeabi_memset4                    
-00005e4b  __aeabi_memset8                    
-00005e51  memset                             
-00005ec5  switch_init                        
-00005ef1  get_sw1                            
-00005f05  get_sw2                            
-00005fa5  init_systick                       
-00006011  __TI_decompress_lzss               
-00006079  frexp                              
-00006079  frexpl                             
-000060dd  led_init                           
-000060fd  led_red                            
-00006109  led_yellow                         
-00006115  led_green                          
-00006121  led_off                            
-00006193  __TI_ltoa                          
-00006239  atoi                               
-00006285  __aeabi_d2iz                       
-000062cd  __TI_auto_init_nobinit_nopinit     
-00006351  _c_int00_noargs                    
-00006385  __aeabi_i2d                        
-000063b5  vsprintf                           
-000063dd  memccpy                            
-000063f9  copysign                           
-000063f9  copysignl                          
-0000642b  strcmp                             
-00006443  strchr                             
-00006459  strcpy                             
-0000646d  strlen                             
-00006481  wcslen                             
-00006493  __TI_decompress_none               
-000064a1  __TI_zero_init                     
-000064ad  ResetISR                           
-000064c5  __aeabi_errno_addr                 
-000064cd  _system_pre_init                   
-000064d1  C$$EXIT                            
-000064d1  abort                              
-000064d4  _ctypes_                           
-000065e1  LCD_init_sequense                  
-000065ec  ulMaxSyscallInterruptPriority      
-00006604  __TI_Handler_Table_Base            
-00006610  __TI_Handler_Table_Limit           
-00006618  __TI_CINIT_Base                    
-00006628  __TI_CINIT_Limit                   
+000035ad  paymenttype_state                  
+000035e1  cardnumber_check_state             
+00003645  pin_check_state                    
+0000377d  key2int                            
+000037bd  cash_state                         
+000038bf  change_state                       
+000039ad  wr_ch_LCD                          
+000039c7  wr_str_LCD                         
+000039e5  move_LCD                           
+00003a1b  wr_ctrl_LCD_low                    
+00003add  wr_ctrl_LCD_high                   
+00003af3  out_LCD_low                        
+00003b3d  out_LCD_high                       
+00003b53  wr_ctrl_LCD                        
+00003ba9  clr_LCD                            
+00003bb3  home_LCD                           
+00003bbd  Set_cursor                         
+00003bcd  out_LCD                            
+00003c09  lcd_init                           
+00003c53  lprintf                            
+00003cb1  lcd_task                           
+00003dcd  ui_clear_screen                    
+00003de5  ui_task                            
+00003e21  main_menu                          
+00003e85  log_list_menu                      
+00003f67  sales_report_menu                  
+000041b5  lcrh_databits                      
+000041df  lcrh_stopbits                      
+000041f9  lcrh_parity                        
+00004241  uart0_tx_rdy                       
+0000424d  uart0_init                         
+00004329  uart0_read_isr                     
+00004367  uart0_write_task                   
+0000438b  uart0_sendstring                   
+000043c7  uprintf                            
+000046b5  row                                
+00004701  key_catch                          
+0000472f  key_get                            
+0000474b  check_column                       
+0000478f  key_init                           
+000047cf  key_task                           
+00004a61  log_init                           
+00004a99  log_task                           
+00004b9d  log_coffee                         
+00004bb3  log_payment                        
+00004bc9  log_nextlog                        
+00004c29  pvPortMalloc                       
+00004d21  vPortFree                          
+00004d7f  xPortGetFreeHeapSize               
+00004d85  vPortInitialiseBlocks              
+00004de1  __aeabi_dsub                       
+00004deb  __aeabi_dadd                       
+00004f99  main                               
+0000510d  digiswitch_init                    
+0000516b  digiswitch_isr                     
+000051d9  digiswitch_task                    
+0000520b  digiswitch_get                     
+00005399  pxPortInitialiseStack              
+00005403  xPortStartScheduler                
+00005439  vPortEndScheduler                  
+0000543b  vPortEnterCritical                 
+0000545b  vPortExitCritical                  
+00005471  xPortSysTickHandler                
+00005497  vPortSetupTimerInterrupt           
+000054d5  __aeabi_ddiv                       
+0000560b  vListInitialise                    
+0000563b  vListInitialiseItem                
+0000564b  vListInsertEnd                     
+00005687  vListInsert                        
+000056ed  uxListRemove                       
+00005859  ldexp                              
+00005859  ldexpl                             
+00005859  scalbn                             
+00005859  scalbnl                            
+00005969  __aeabi_dmul                       
+00005a75  ulPortGetIPSR                      
+00005a8d  xPortPendSVHandler                 
+00005aed  vPortSVCHandler                    
+00005b0d  vPortStartFirstTask                
+00005b31  vPortEnableVFP                     
+00005bf3  __aeabi_memcpy                     
+00005bf3  __aeabi_memcpy4                    
+00005bf3  __aeabi_memcpy8                    
+00005bf3  memcpy                             
+00005c8f  __aeabi_uldivmod                   
+00005d25  __aeabi_cdcmpeq                    
+00005d25  __aeabi_cdcmple                    
+00005dab  __aeabi_cdrcmple                   
+00005e31  __aeabi_memclr                     
+00005e31  __aeabi_memclr4                    
+00005e31  __aeabi_memclr8                    
+00005e33  __aeabi_memset                     
+00005e33  __aeabi_memset4                    
+00005e33  __aeabi_memset8                    
+00005e39  memset                             
+00005ead  switch_init                        
+00005ed9  get_sw1                            
+00005eed  get_sw2                            
+00005f8d  init_systick                       
+00005ff9  __TI_decompress_lzss               
+00006061  frexp                              
+00006061  frexpl                             
+000060c5  led_init                           
+000060e5  led_red                            
+000060f1  led_yellow                         
+000060fd  led_green                          
+00006109  led_off                            
+0000617b  __TI_ltoa                          
+00006221  atoi                               
+0000626d  __aeabi_d2iz                       
+000062b5  __TI_auto_init_nobinit_nopinit     
+00006339  _c_int00_noargs                    
+0000636d  __aeabi_i2d                        
+0000639d  vsprintf                           
+000063c5  memccpy                            
+000063e1  copysign                           
+000063e1  copysignl                          
+00006413  strcmp                             
+0000642b  strchr                             
+00006441  strcpy                             
+00006455  strlen                             
+00006469  wcslen                             
+0000647b  __TI_decompress_none               
+00006489  __TI_zero_init                     
+00006495  ResetISR                           
+000064ad  __aeabi_errno_addr                 
+000064b5  _system_pre_init                   
+000064b9  C$$EXIT                            
+000064b9  abort                              
+000064bc  _ctypes_                           
+000065c9  LCD_init_sequense                  
+000065d4  ulMaxSyscallInterruptPriority      
+000065ec  __TI_Handler_Table_Base            
+000065f8  __TI_Handler_Table_Limit           
+00006600  __TI_CINIT_Base                    
+00006610  __TI_CINIT_Limit                   
 20000000  __start___llvm_prf_cnts            
 20000000  __stop___llvm_prf_cnts             
-20001c20  coffee_types                       
-20001cc0  log_array                          
-20001d38  buffer                             
-20001d80  current_coffee                     
-20001e1c  cardnumber                         
-20001e24  Q_KEY                              
-20001e28  Q_LCD                              
-20001e2c  active_semaphore                   
-20001e30  balance_mutex                      
-20001e34  cash_set                           
-20001e38  coffee_t                           
-20001e3c  coffee_types_mutex                 
-20001e40  digiswitch_t                       
-20001e44  ds_input_queue                     
-20001e48  log_array_semaphore                
-20001e4c  log_coffee_q                       
-20001e50  log_payment_q                      
-20001e54  payment_t                          
-20001e58  uart0_rx_queue                     
-20001e5c  uart0_tx_queue                     
-20001e60  LCD_init                           
-20001e61  balance                            
-20001e68  __stack                            
-20002068  __STACK_END                        
-20002068  __STACK_TOP                        
-20002068  pxCurrentTCB                       
-200020a8  errno                              
-200020ac  LCD_state                          
+20001c20  log_array                          
+20001ce8  coffee_types                       
+20001d88  buffer                             
+20001dd0  current_coffee                     
+20001e54  cardnumber                         
+20001e7c  Q_KEY                              
+20001e80  Q_LCD                              
+20001e84  active_semaphore                   
+20001e88  balance_mutex                      
+20001e8c  cash_set                           
+20001e90  coffee_t                           
+20001e94  coffee_types_mutex                 
+20001e98  digiswitch_t                       
+20001e9c  ds_input_queue                     
+20001ea0  log_array_semaphore                
+20001ea4  log_coffee_q                       
+20001ea8  log_payment_q                      
+20001eac  payment_t                          
+20001eb0  uart0_rx_queue                     
+20001eb4  uart0_tx_queue                     
+20001eb8  LCD_init                           
+20001eb9  balance                            
+20001ec0  __stack                            
+200020c0  __STACK_END                        
+200020c0  __STACK_TOP                        
+200020c0  pxCurrentTCB                       
+20002100  errno                              
+20002104  LCD_state                          
 ffffffff  __TI_pprof_out_hndl                
 ffffffff  __TI_prof_data_size                
 ffffffff  __TI_prof_data_start               

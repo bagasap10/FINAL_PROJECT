@@ -13,7 +13,7 @@ D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/TivaM4/portasm.asm
 
 C_SRCS += \
 ../coffee.c \
-../digitalswitch.c \
+../digiswitch.c \
 D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/port/MemMang/heap_2.c \
 ../key.c \
 ../lcd.c \
@@ -33,7 +33,7 @@ D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/src/tasks.c \
 
 C_DEPS += \
 ./coffee.d \
-./digitalswitch.d \
+./digiswitch.d \
 ./heap_2.d \
 ./key.d \
 ./lcd.d \
@@ -53,7 +53,7 @@ C_DEPS += \
 
 OBJS += \
 ./coffee.obj \
-./digitalswitch.obj \
+./digiswitch.obj \
 ./heap_2.obj \
 ./key.obj \
 ./lcd.obj \
@@ -77,7 +77,7 @@ ASM_DEPS += \
 
 OBJS__QUOTED += \
 "coffee.obj" \
-"digitalswitch.obj" \
+"digiswitch.obj" \
 "heap_2.obj" \
 "key.obj" \
 "lcd.obj" \
@@ -98,7 +98,7 @@ OBJS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "coffee.d" \
-"digitalswitch.d" \
+"digiswitch.d" \
 "heap_2.d" \
 "key.d" \
 "lcd.d" \
@@ -121,7 +121,7 @@ ASM_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../coffee.c" \
-"../digitalswitch.c" \
+"../digiswitch.c" \
 "D:/Embedded Programming/FINAL_PROJECT/freeRTOS/port/MemMang/heap_2.c" \
 "../key.c" \
 "../lcd.c" \

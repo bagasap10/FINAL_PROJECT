@@ -11,7 +11,7 @@
 #include "tm4c123gh6pm.h"
 #include "emp_type.h"
 #include "key.h"
-#include "digitalswitch.h"
+#include "digiswitch.h"
 #include "lcd.h"
 #include "semphr.h"
 #include "queue.h"
@@ -20,7 +20,7 @@
 /*****************************    Defines    *******************************/
 #define CARD_METHOD             '1'
 #define CASH_METHOD             '2'
-#define CARD_LENGTH             8
+#define CARD_LENGTH             16
 #define PIN_LENGTH              4
 #define CARD_MAX_ATTEMPTS       3
 #define CARD_PREPAID            30

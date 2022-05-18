@@ -4,6 +4,7 @@
  * main.c
  */
 
+#include <digiswitch.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -14,7 +15,6 @@
 #include "uart0.h"
 #include "key.h"
 #include "systick_frt.h"
-#include "digitalswitch.h"
 #include "lcd.h"
 #include "payment.h"
 #include "coffee.h"
@@ -33,17 +33,16 @@ TaskHandle_t coffee_t;
 #define PRIORITY_IDLE 0
 
 int main(void){
-    // Initialize
     uart0_init(19200, 8, 1, 0);
     init_systick();
     key_init();
     digiswitch_init();
     lcd_init();
-    payment_init();
-    coffee_init();
     switch_init();
     led_init();
     led_off();
+    payment_init();
+    coffee_init();
     log_init();
 
     // Create tasks

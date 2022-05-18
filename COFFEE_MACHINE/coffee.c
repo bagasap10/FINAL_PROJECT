@@ -40,17 +40,6 @@ void coffee_init()
     coffee_types_mutex = xSemaphoreCreateMutex();
     xSemaphoreGive(coffee_types_mutex);
 
-    // Init default coffee
-    COFFEE_TYPE espresso;
-    espresso.active = 1;
-    strcpy(espresso.name, "Espresso");
-    espresso.price = 15;
-    espresso.amount_pay = 0;
-    espresso.grind_time = 5.0f;
-    espresso.brew_time = 15.0f;
-    espresso.milk_time = 0.0f;
-    coffee_types[0] = espresso;
-
     COFFEE_TYPE cappuccino;
     cappuccino.active = 1;
     strcpy(cappuccino.name, "Cappuccino");
@@ -60,6 +49,16 @@ void coffee_init()
     cappuccino.brew_time = 15.0f;
     cappuccino.milk_time = 3.0f;
     coffee_types[1] = cappuccino;
+
+    COFFEE_TYPE espresso;
+    espresso.active = 1;
+    strcpy(espresso.name, "Espresso");
+    espresso.price = 15;
+    espresso.amount_pay = 0;
+    espresso.grind_time = 5.0f;
+    espresso.brew_time = 15.0f;
+    espresso.milk_time = 0.0f;
+    coffee_types[0] = espresso;
 
     COFFEE_TYPE filter_coffee;
     filter_coffee.active = 1;

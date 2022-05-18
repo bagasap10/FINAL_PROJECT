@@ -35,7 +35,7 @@ log.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/
 log.obj: ../payment.h
 log.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 log.obj: ../key.h
-log.obj: ../digitalswitch.h
+log.obj: ../digiswitch.h
 log.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h
 log.obj: ../led.h
 log.obj: ../log.h
@@ -44,7 +44,7 @@ log.obj: ../led.h
 log.obj: ../payment.h
 log.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 log.obj: ../key.h
-log.obj: ../digitalswitch.h
+log.obj: ../digiswitch.h
 log.obj: ../led.h
 log.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 
@@ -118,7 +118,7 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../key.h:
 
-../digitalswitch.h:
+../digiswitch.h:
 
 D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h:
 
@@ -136,7 +136,7 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../key.h:
 
-../digitalswitch.h:
+../digiswitch.h:
 
 ../led.h:
 
