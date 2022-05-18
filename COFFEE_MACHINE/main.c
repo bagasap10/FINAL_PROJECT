@@ -4,7 +4,7 @@
  * main.c
  */
 
-#include <digiswitch.h>
+//#include <digiswitch.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -36,7 +36,7 @@ int main(void){
     uart0_init(19200, 8, 1, 0);
     init_systick();
     key_init();
-    digiswitch_init();
+//    digiswitch_init();
     lcd_init();
     switch_init();
     led_init();
@@ -63,9 +63,9 @@ int main(void){
     configMINIMAL_STACK_SIZE,
                 NULL, PRIORITY_IDLE, NULL);
 
-    xTaskCreate(digiswitch_task, "Digitalswitch task",
-    configMINIMAL_STACK_SIZE,
-                NULL, PRIORITY_HIGH, NULL);
+//    xTaskCreate(digiswitch_task, "Digitalswitch task",
+//    configMINIMAL_STACK_SIZE,
+//                NULL, PRIORITY_HIGH, NULL);
 
     xTaskCreate(lcd_task, "LCD task",
     configMINIMAL_STACK_SIZE + 100,

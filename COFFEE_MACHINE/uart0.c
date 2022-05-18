@@ -85,9 +85,6 @@ INT32U lcrh_parity(INT8U parity)
 }
 
 extern BOOLEAN uart0_tx_rdy()
-/*****************************************************************************
- *   Function : See module specification (.h-file).
- *****************************************************************************/
 {
     return ( UART0_FR_R & UART_FR_TXFE);
 }
@@ -142,8 +139,9 @@ extern void uart0_init(INT32U baud_rate, INT8U databits, INT8U stopbits,
 
 void uart0_read_isr()
 {
+
     while (!(UART0_FR_R & UART_FR_RXFE))
-    { // While FIFO not empty
+    {
         // Make sure no errors in transmission except overrun (triggers with values like æøå)
         configASSERT(!(UART0_DR_R & 0x700));
         // Receive msg
@@ -170,7 +168,6 @@ void uart0_write_task(void * pvParameters)
         while (UART0_FR_R & UART_FR_TXFF) {
 
         }
-
         // Transmit msg
         UART0_DR_R = msg;
     }

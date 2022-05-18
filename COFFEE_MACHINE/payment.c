@@ -33,7 +33,7 @@ void payment_init()
     xSemaphoreGive(balance_mutex);
 
     // Set cotaining digiswtich input queue and coffee select semaphore
-    cash_set_q = xQueueCreateSet(DS_INPUT_QUEUE_LENGTH + 1);
+    cash_set_q = xQueueCreateSet(20 + 1);
 }
 
 /*****************************************************************************
@@ -253,23 +253,23 @@ PAYMENT_STATES cash_state()
     while (1)
     {
         xSemaphoreTake(balance_mutex, portMAX_DELAY);
-        INT8S dir = 0;
-        do
-        {
-            dir = digiswitch_get(5);
-
-//            lprintf(1, "dir : %d", dir);
-            switch (dir)
-            {
-            case 1:
-                balance += CLOCKWISE;
-                break;
-            case -1:
-                balance += COUNTERCLOCKWISE;
-                break;
-            }
-        }
-        while (dir != 0);
+//        INT8S dir = 0;
+//        do
+//        {
+//            dir = digiswitch_get(0);
+//
+////            lprintf(1, "dir : %d", dir);
+//            switch (dir)
+//            {
+//            case 1:
+//                balance += CLOCKWISE;
+//                break;
+//            case -1:
+//                balance += COUNTERCLOCKWISE;
+//                break;
+//            }
+//        }
+//        while (dir != 0);
 
         lprintf(1, "Balance : %d", balance);
 

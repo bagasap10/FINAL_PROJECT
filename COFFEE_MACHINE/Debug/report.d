@@ -36,7 +36,6 @@ report.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xloca
 report.obj: ../payment.h
 report.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 report.obj: ../key.h
-report.obj: ../digiswitch.h
 report.obj: D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h
 report.obj: ../led.h
 report.obj: ../log.h
@@ -45,7 +44,6 @@ report.obj: ../led.h
 report.obj: ../payment.h
 report.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 report.obj: ../key.h
-report.obj: ../digiswitch.h
 report.obj: ../led.h
 report.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 report.obj: ../uart0.h
@@ -122,8 +120,6 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../key.h:
 
-../digiswitch.h:
-
 D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h:
 
 ../led.h:
@@ -139,8 +135,6 @@ D:/Embedded\ Programming/FINAL_PROJECT/freeRTOS/inc/semphr.h:
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
 ../key.h:
-
-../digiswitch.h:
 
 ../led.h:
 
