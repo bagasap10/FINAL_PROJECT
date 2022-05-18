@@ -11,6 +11,7 @@
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "task.h"
+#include "coffee.h"
 
 #ifndef REPORT_H_
 #define REPORT_H_

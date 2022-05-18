@@ -10,11 +10,11 @@
 
 /***************** Constants ******************/
 /***************** Variables ******************/
-extern COFFEE_TYPE coffee_types[COFFEE_TYPES_LENGTH];
-extern SemaphoreHandle_t coffee_types_mutex;
-
-extern LOG_TYPE log_array[LOG_LENGTH];
+extern LOG_TYPE log_array[10];
 extern SemaphoreHandle_t log_array_semaphore;
+
+extern COFFEE_TYPE coffee_types[5];
+extern SemaphoreHandle_t coffee_types_mutex;
 
 extern QueueHandle_t uart0_rx_queue;
 
@@ -52,17 +52,17 @@ void ui_task(void *pvParameters)
 MENU main_menu()
 {
     ui_clear_screen();
-    uprintf(buffer, "----------------------\n\r");
-    uprintf(buffer, "Select menu\n\r");
-    uprintf(buffer, "1 - List logs\n\r");
-    uprintf(buffer, "2 - Sales report\n\r");
-    uprintf(buffer, "----------------------\n\r");
+    uprintf(buffer, "======================\n\r");
+    uprintf(buffer, "Select menu: \n\r");
+    uprintf(buffer, "1-Log list\n\r");
+    uprintf(buffer, "2-Sales report\n\r");
+    uprintf(buffer, "======================\n\r");
 
-    INT8U inp;
+    INT8U input;
     while (1)
     {
-        xQueueReceive(uart0_rx_queue, &inp, portMAX_DELAY);
-        switch (inp)
+        xQueueReceive(uart0_rx_queue, &input, portMAX_DELAY);
+        switch (input)
         {
         case '1':
             return LOG_LIST;
@@ -79,17 +79,17 @@ MENU log_list_menu()
 {
     int i;
     ui_clear_screen();
-    uprintf(buffer,
-            "Order no. | Coffee no. | Coffee name   | Price | Payment type\n\r");
+    uprintf(buffer, "Order no. || Coffee no. || Coffee name || Price || Payment type \n\r");
 
     xSemaphoreTake(log_array_semaphore, portMAX_DELAY);
     xSemaphoreTake(coffee_types_mutex, portMAX_DELAY);
 
-    for (i = 0; i < LOG_LENGTH; i++)
+    for (i = 0; i < 10; i++)
     {
         if (log_array[i].active)
         {
-            uprintf(buffer, "%-10d| %-11d| %-14s| %-6d| %s\n\r", i,
+            uprintf(buffer, "%-9d || %-12d || %-13s || %-7d || %s \n\r",
+                    i,
                     log_array[i].coffee_number,
                     coffee_types[log_array[i].coffee_number].name,
                     log_array[i].price, log_array[i].payment_type);
@@ -103,10 +103,10 @@ MENU log_list_menu()
     xSemaphoreGive(log_array_semaphore);
     xSemaphoreGive(coffee_types_mutex);
 
-    uprintf(buffer, "Press any key to return\n\r");
-    INT16U inp = 0;
-    xQueueReceive(uart0_rx_queue, &inp, portMAX_DELAY);
-    uprintf(buffer, "%d", inp);
+    uprintf(buffer, "Press any key to continue \n\r");
+    INT16U input = 0;
+    xQueueReceive(uart0_rx_queue, &input, portMAX_DELAY);
+    uprintf(buffer, "%d", input);
 
     return MAIN_MENU;
 }
@@ -115,17 +115,17 @@ MENU sales_report_menu()
 {
     int i, j;
     ui_clear_screen();
-    uprintf(buffer, "Coffee name   | Total sales\n\r");
+    uprintf(buffer, "Coffee name  ||  Total sales\n\r");
 
     xSemaphoreTake(log_array_semaphore, portMAX_DELAY);
     xSemaphoreTake(coffee_types_mutex, portMAX_DELAY);
 
-    for (i = 0; i < COFFEE_TYPES_LENGTH; i++)
+    for (i=0; i < 5; i++)
     {
         if (coffee_types[i].active)
         {
             INT16U sum = 0;
-            for (j = 0; j < LOG_LENGTH; j++)
+            for (j = 0; j < 10; j++)
             {
                 if (log_array[j].active)
                 {
@@ -135,26 +135,20 @@ MENU sales_report_menu()
                         break;
                     }
                 }
-                else
-                {
-                    break;
-                }
+                else { break; }
             }
-            uprintf(buffer, "%-14s| %d\n\r", coffee_types[i].name, sum);
+            uprintf(buffer, "%-14s|| %d\n\r", coffee_types[i].name, sum);
         }
-        else
-        {
-            break;
-        }
+        else { break; }
     }
 
     xSemaphoreGive(log_array_semaphore);
     xSemaphoreGive(coffee_types_mutex);
 
     uprintf(buffer, "Press any key to return\n\r");
-    INT16U inp = 0;
-    xQueueReceive(uart0_rx_queue, &inp, portMAX_DELAY);
-    uprintf(buffer, "%d", inp);
+    INT16U input = 0;
+    xQueueReceive(uart0_rx_queue, &input, portMAX_DELAY);
+    uprintf(buffer, "%d", input);
 
     return MAIN_MENU;
 }
